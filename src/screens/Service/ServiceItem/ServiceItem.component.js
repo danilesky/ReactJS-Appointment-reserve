@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Checkbox from "../../../components/form/Checkbox/Checkbox.component";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,12 +13,6 @@ const Info = styled.div`
   flex-direction: column;
 `;
 
-const Checkbox = styled.input`
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-`;
 const Title = styled.span`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.default.dark};
@@ -36,17 +31,9 @@ const Pricing = styled.span`
 
 const ServiceItem = ({ onChange, data }) => {
   const [checked, setChecked] = useState(false);
-
-  const checkHandler = () => {
-    setChecked((prevCheck) => {
-      onChange(!prevCheck);
-      return !prevCheck;
-    });
-  };
-
   return (
-    <Wrapper onClick={checkHandler}>
-      <Checkbox type="checkbox" checked={checked} onChange={checkHandler} />
+    <Wrapper onClick={() => setChecked(!checked)}>
+      <Checkbox type="checkbox" isChecked={checked} onChange={onChange} />
       <Info>
         <Title>Pánsky strih</Title>
         <Pricing>Cena : 30$ , Čas : 1:30hod.</Pricing>
