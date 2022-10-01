@@ -1,10 +1,10 @@
-import { Checkbox } from "@mui/material";
 import React from "react";
+import ServiceItem from "./ServiceItem/ServiceItem.component";
 
 const Service = () => {
   return (
     <div>
-      <Checkbox />
+      <ServiceItem />
     </div>
   );
 };
