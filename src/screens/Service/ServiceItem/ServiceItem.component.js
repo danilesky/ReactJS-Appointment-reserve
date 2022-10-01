@@ -1,36 +1,17 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import Checkbox from "../../../components/form/Checkbox/Checkbox.component";
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  cursor: pointer;
-`;
-const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Title = styled.span`
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.default.dark};
-  margin-bottom: ${({ theme }) => theme.space[1]};
-`;
-
-const Description = styled.p`
-  color: ${({ theme }) => theme.colors.default.grey};
-  margin: ${({ theme }) => theme.space[0]};
-`;
-const Pricing = styled.span`
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  color: ${({ theme }) => theme.colors.default.dark};
-  margin-bottom: ${({ theme }) => theme.space[1]};
-`;
+import {
+  Wrapper,
+  Info,
+  Title,
+  Pricing,
+  Description,
+} from "./ServiceItem.styled";
 
 const ServiceItem = ({ onChange, data }) => {
   const [checked, setChecked] = useState(false);
+
   return (
     <Wrapper onClick={() => setChecked(!checked)}>
       <Checkbox type="checkbox" isChecked={checked} onChange={onChange} />
