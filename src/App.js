@@ -12,6 +12,8 @@ const Application = styled.div`
 const Body = styled.div`
   max-width: 1440px;
   margin: auto;
+  font-family: ${({ theme }) => theme.fonts.body};
+  color: ${({ theme }) => theme.colors.default.blue};
 `;
 function App() {
   return (
