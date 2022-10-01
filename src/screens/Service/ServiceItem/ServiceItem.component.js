@@ -34,16 +34,15 @@ const Pricing = styled.span`
   margin-bottom: ${({ theme }) => theme.space[1]};
 `;
 
-const ServiceItem = (props) => {
+const ServiceItem = ({ onChange, data }) => {
   const [checked, setChecked] = useState(false);
 
   const checkHandler = () => {
-    setChecked(!checked);
+    setChecked((prevCheck) => {
+      onChange(!prevCheck);
+      return !prevCheck;
+    });
   };
-
-  useEffect(() => {
-    setChecked(props.isChecked ? props.isChecked : false);
-  }, []);
 
   return (
     <Wrapper onClick={checkHandler}>
