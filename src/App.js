@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./infrastructure/theme";
+import Service from "./screens/Service/Service.screen";
 
 const Application = styled.div`
   display: flex;
@@ -19,7 +20,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Application>
-        <Body>Text</Body>
+        <Body>
+          <Service />
+        </Body>
       </Application>
     </ThemeProvider>
   );
