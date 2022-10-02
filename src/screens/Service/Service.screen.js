@@ -10,7 +10,7 @@ const Service = () => {
   return (
     <ServiceList>
       {services.map((data) => {
-        return <ServiceItem onChange={onChangeHandler} />;
+        return <ServiceItem data={data} onChange={onChangeHandler} />;
       })}
     </ServiceList>
   );
