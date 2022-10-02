@@ -1,24 +1,36 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ServicesContext } from "../../services/Services/services.context";
 import { ServiceList } from "./Service.styled";
 import ServiceItem from "./ServiceItem/ServiceItem.component";
 
 const Service = () => {
   const { services, setServices, error, loading } = useContext(ServicesContext);
-  const onChangeHandler = (value) => {
+  const onChangeHandler = (value, data) => {
     setServices((prevServices) => {
       const newServices = prevServices.map((service) => {
-        return { ...service, isChecked: value };
+        if (data.id === service.id) {
+          return { ...service, isChecked: value };
+        } else {
+          return { ...service };
+        }
       });
       return newServices;
     });
-    console.log(services);
   };
+
   return (
     <ServiceList>
       {services.map((service) => {
-        return <ServiceItem data={service} onChange={onChangeHandler} />;
+        return (
+          <ServiceItem
+            key={service.id}
+            data={service}
+            onChange={onChangeHandler}
+          />
+        );
       })}
+      <Link to="/book">Book</Link>
     </ServiceList>
   );
 };

@@ -3,6 +3,8 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./infrastructure/theme";
 import Service from "./screens/Service/Service.screen";
 import ServicesContextProvider from "./services/Services/services.context";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Time from "./screens/Time/Time.screen";
 
 const Application = styled.div`
   display: flex;
@@ -23,7 +25,12 @@ function App() {
       <ServicesContextProvider>
         <Application>
           <Body>
-            <Service />
+            <Router>
+              <Routes>
+                <Route exact path="/" element={<Service />}></Route>
+                <Route path="/book" element={<Time />}></Route>
+              </Routes>
+            </Router>
           </Body>
         </Application>
       </ServicesContextProvider>

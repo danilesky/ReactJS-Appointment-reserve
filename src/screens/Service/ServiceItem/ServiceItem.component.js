@@ -14,10 +14,14 @@ const ServiceItem = ({ onChange, data }) => {
 
   const checkHandler = () => {
     setChecked((checked) => {
-      onChange(!checked);
+      onChange(!checked, data);
       return !checked;
     });
   };
+  console.log("render");
+  useEffect(() => {
+    setChecked(data.isChecked);
+  }, [data]);
   return (
     <Wrapper onClick={checkHandler}>
       <Checkbox type="checkbox" isChecked={checked} onChange={checkHandler} />
