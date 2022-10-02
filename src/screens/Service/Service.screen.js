@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ServicesContext } from "../../services/Services/services.context";
 import { ServiceList } from "./Service.styled";
 import ServiceItem from "./ServiceItem/ServiceItem.component";
-const services = [1, 2, 3, 4];
 
 const Service = () => {
+  const { services, error, loading } = useContext(ServicesContext);
   const onChangeHandler = (e) => {
     console.log(e);
   };

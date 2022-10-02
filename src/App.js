@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./infrastructure/theme";
 import Service from "./screens/Service/Service.screen";
+import ServicesContextProvider from "./services/Services/services.context";
 
 const Application = styled.div`
   display: flex;
@@ -19,11 +20,13 @@ const Body = styled.div`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Application>
-        <Body>
-          <Service />
-        </Body>
-      </Application>
+      <ServicesContextProvider>
+        <Application>
+          <Body>
+            <Service />
+          </Body>
+        </Application>
+      </ServicesContextProvider>
     </ThemeProvider>
   );
 }
