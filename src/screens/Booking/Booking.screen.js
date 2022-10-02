@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import Calendar from "../../components/calendar/Calendar/Calendar";
 import { ServicesContext } from "../../services/Services/services.context";
 
-const Time = () => {
+const Booking = () => {
   const { services } = useContext(ServicesContext);
   return (
     <div>
-      Time
-      <Link to="/">Service</Link>
+      Booking
+      <Calendar />
     </div>
   );
 };
 
-export default Time;
+export default Booking;

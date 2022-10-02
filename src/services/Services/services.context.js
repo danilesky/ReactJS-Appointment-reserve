@@ -14,7 +14,6 @@ const ServicesContextProvider = ({ children }) => {
       .then(servicesTransform)
       .then((result) => {
         setServices(result);
-        console.log(result);
         setLoading(false);
       })
       .catch((err) => {

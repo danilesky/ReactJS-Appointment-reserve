@@ -4,7 +4,7 @@ import { theme } from "./infrastructure/theme";
 import Service from "./screens/Service/Service.screen";
 import ServicesContextProvider from "./services/Services/services.context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Time from "./screens/Time/Time.screen";
+import Booking from "./screens/Booking/Booking.screen";
 
 const Application = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ function App() {
             <Router>
               <Routes>
                 <Route exact path="/" element={<Service />}></Route>
-                <Route path="/book" element={<Time />}></Route>
+                <Route path="/booking" element={<Booking />}></Route>
               </Routes>
             </Router>
           </Body>

@@ -18,13 +18,12 @@ const ServiceItem = ({ onChange, data }) => {
       return !checked;
     });
   };
-  console.log("render");
   useEffect(() => {
     setChecked(data.isChecked);
-  }, [data]);
+  }, [data.isChecked]);
   return (
     <Wrapper onClick={checkHandler}>
-      <Checkbox type="checkbox" isChecked={checked} onChange={checkHandler} />
+      <Checkbox type="checkbox" isChecked={checked} onChange={() => true} />
       <Info>
         <Title>{data.title}</Title>
         <Pricing>{data.priceHours}</Pricing>

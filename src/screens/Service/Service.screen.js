@@ -18,7 +18,6 @@ const Service = () => {
       return newServices;
     });
   };
-
   return (
     <ServiceList>
       {services.map((service) => {
@@ -30,7 +29,7 @@ const Service = () => {
           />
         );
       })}
-      <Link to="/book">Book</Link>
+      <Link to="/booking">Booking</Link>
     </ServiceList>
   );
 };
