@@ -28,7 +28,7 @@ const ServicesContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <ServicesContext.Provider value={{ services, loading, error }}>
+    <ServicesContext.Provider value={{ services, setServices, loading, error }}>
       {children}
     </ServicesContext.Provider>
   );

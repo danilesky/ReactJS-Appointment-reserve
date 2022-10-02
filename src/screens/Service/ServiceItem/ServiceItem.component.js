@@ -12,9 +12,15 @@ import {
 const ServiceItem = ({ onChange, data }) => {
   const [checked, setChecked] = useState(false);
 
+  const checkHandler = () => {
+    setChecked((checked) => {
+      onChange(!checked);
+      return !checked;
+    });
+  };
   return (
-    <Wrapper onClick={() => setChecked(!checked)}>
-      <Checkbox type="checkbox" isChecked={checked} onChange={onChange} />
+    <Wrapper onClick={checkHandler}>
+      <Checkbox type="checkbox" isChecked={checked} onChange={checkHandler} />
       <Info>
         <Title>{data.title}</Title>
         <Pricing>{data.priceHours}</Pricing>

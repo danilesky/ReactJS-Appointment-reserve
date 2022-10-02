@@ -5,8 +5,14 @@ import ServiceItem from "./ServiceItem/ServiceItem.component";
 
 const Service = () => {
   const { services, setServices, error, loading } = useContext(ServicesContext);
-  const onChangeHandler = (e) => {
-    console.log(e);
+  const onChangeHandler = (value) => {
+    setServices((prevServices) => {
+      const newServices = prevServices.map((service) => {
+        return { ...service, isChecked: value };
+      });
+      return newServices;
+    });
+    console.log(services);
   };
   return (
     <ServiceList>
