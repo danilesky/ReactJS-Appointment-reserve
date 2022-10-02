@@ -4,14 +4,14 @@ import { ServiceList } from "./Service.styled";
 import ServiceItem from "./ServiceItem/ServiceItem.component";
 
 const Service = () => {
-  const { services, error, loading } = useContext(ServicesContext);
+  const { services, setServices, error, loading } = useContext(ServicesContext);
   const onChangeHandler = (e) => {
     console.log(e);
   };
   return (
     <ServiceList>
-      {services.map((data) => {
-        return <ServiceItem data={data} onChange={onChangeHandler} />;
+      {services.map((service) => {
+        return <ServiceItem data={service} onChange={onChangeHandler} />;
       })}
     </ServiceList>
   );

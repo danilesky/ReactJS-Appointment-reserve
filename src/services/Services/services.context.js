@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import { servicesRequest } from "./services.service";
+import { servicesRequest, servicesTransform } from "./services.service";
 
 export const ServicesContext = createContext();
 
@@ -11,6 +11,7 @@ const ServicesContextProvider = ({ children }) => {
   const retrieveServices = () => {
     setLoading(true);
     servicesRequest()
+      .then(servicesTransform)
       .then((result) => {
         setServices(result);
         console.log(result);
