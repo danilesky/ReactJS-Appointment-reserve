@@ -8,9 +8,6 @@ export const formatDate = (value) => {
   //convert month string to number
   month = Number(month);
 
-  //converting month numbers to ou month number December -12 , January-1
-  month = month - 1;
-
   //December
   if (month === 0) {
     month = 12;
@@ -18,12 +15,11 @@ export const formatDate = (value) => {
 
   //Convert numbers date  to string with 0
   if (month < 10) {
-    month = `0${month.toString()}`;
+    month = `0${month}`;
   } else {
     month = month.toString();
   }
 
   const formatedDate = `${day + month + year}`;
-
   return formatedDate;
 };
