@@ -1,5 +1,6 @@
 import React from "react";
 import { Calendar as DatePicker } from "react-calendar";
+import { formatDate } from "../../../infrastructure/functions/formatDate";
 
 //24071998 - dateDay data
 
@@ -25,13 +26,16 @@ const appointments = [
 const Calendar = () => {
   //Todays date
   const currentDate = new Date();
+
   //Function that disables past day tiles
   const disableTiles = ({ activeStartDate, date, view }) => {
     return date < new Date();
   };
 
   //Function to generate number of FREE APPOINTMENTS for each day under DAYtileContent
-  const tileContent = ({ date }) => {};
+  const tileContent = ({ date }) => {
+    console.log(formatDate(date));
+  };
   return <DatePicker tileDisabled={disableTiles} tileContent={tileContent} />;
 };
 
